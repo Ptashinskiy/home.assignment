@@ -1,4 +1,4 @@
-package com.example.home.assignment.exception;
+package com.example.home.assignment.service;
 
 public class CurrencyException extends RuntimeException {
 

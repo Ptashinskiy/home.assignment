@@ -1,6 +1,5 @@
 package com.example.home.assignment.messaging;
 
-import com.example.home.assignment.dto.WalletTransactionMessage;
 import com.example.home.assignment.service.ProcessingService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +27,7 @@ public class Listener {
      *
      * @param message The {@link WalletTransactionMessage} received from Kafka.
      */
-    @KafkaListener(topics = "wallet-transactions")
+    @KafkaListener(topics = "wallet-transactions", groupId = "123424120")
     public void listen(WalletTransactionMessage message) {
         logger.info(
                 "Received new message. Player id: {}, Game id: {}, Transaction id: {}",

@@ -26,7 +26,7 @@ public class CacheConfig {
      * @return The cache manager bean.
      */
     @Bean
-    public CacheManager cacheManager(Caffeine caffeine) {
+    public CacheManager cacheManager(Caffeine<Object, Object> caffeine) {
         var caffeineCacheManager = new CaffeineCacheManager();
         caffeineCacheManager.setCaffeine(caffeine);
         caffeineCacheManager.setCacheNames(Collections.singletonList("currency-rates"));
@@ -34,7 +34,7 @@ public class CacheConfig {
     }
 
     @Bean
-    public Caffeine caffeineConfig() {
+    public Caffeine<Object, Object> caffeineConfig() {
         return Caffeine.newBuilder()
                 .maximumSize(MAX_CACHE_SIZE)
                 .expireAfterAccess(Duration.ofMinutes(CACHED_ITEM_TTL_IN_MINUTES))

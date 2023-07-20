@@ -1,7 +1,7 @@
 package com.example.home.assignment.service;
 
-import com.example.home.assignment.dto.WalletTransactionMessage;
-import com.example.home.assignment.exception.CurrencyException;
+import com.example.home.assignment.domain.WalletTransactionService;
+import com.example.home.assignment.messaging.WalletTransactionMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

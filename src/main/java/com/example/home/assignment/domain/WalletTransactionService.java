@@ -1,7 +1,5 @@
-package com.example.home.assignment.service;
+package com.example.home.assignment.domain;
 
-import com.example.home.assignment.dao.Repository;
-import com.example.home.assignment.domain.WalletTransaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,11 +10,11 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class WalletTransactionService {
 
-    private final Repository repository;
+    private final WalletTransactionRepository walletTransactionRepository;
 
     @Autowired
-    public WalletTransactionService(Repository repository) {
-        this.repository = repository;
+    public WalletTransactionService(WalletTransactionRepository walletTransactionRepository) {
+        this.walletTransactionRepository = walletTransactionRepository;
     }
 
     /**
@@ -27,6 +25,6 @@ public class WalletTransactionService {
      */
     @Transactional
     public void enrichAndSave(WalletTransaction entity, Double baseCurrencyRate) {
-        repository.save(entity.calculateBaseCurrencyAmount(baseCurrencyRate));
+        walletTransactionRepository.save(entity.calculateBaseCurrencyAmount(baseCurrencyRate));
     }
 }

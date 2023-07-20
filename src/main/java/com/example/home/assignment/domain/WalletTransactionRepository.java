@@ -1,6 +1,5 @@
-package com.example.home.assignment.dao;
+package com.example.home.assignment.domain;
 
-import com.example.home.assignment.domain.WalletTransaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -10,9 +9,9 @@ import org.springframework.stereotype.Component;
  * Component that imitates storage repository behavior.
  * */
 @Component
-public class Repository {
+public class WalletTransactionRepository {
 
-    private final static Logger logger = LoggerFactory.getLogger(Repository.class);
+    private final static Logger logger = LoggerFactory.getLogger(WalletTransactionRepository.class);
 
     public void save(WalletTransaction entity) {
         logger.info("Entity saved to the storage.");
