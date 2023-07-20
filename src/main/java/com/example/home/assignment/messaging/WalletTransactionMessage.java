@@ -1,4 +1,4 @@
-package com.example.home.assignment.dto;
+package com.example.home.assignment.messaging;
 
 import com.example.home.assignment.domain.WalletTransaction;
 

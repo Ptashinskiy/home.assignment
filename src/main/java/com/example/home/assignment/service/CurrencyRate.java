@@ -1,4 +1,4 @@
-package com.example.home.assignment.dto;
+package com.example.home.assignment.service;
 
 public record CurrencyRate(String src,
                            String dst,
